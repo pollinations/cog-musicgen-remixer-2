@@ -54,7 +54,8 @@ build:
     # - "apt-get install unzip"
     # - "python -m pip install pip --upgrade"
     # - "pip install BeatNet==1.1.0"
-
+    - apt-get install wget
+    - wget https://soundmosaic-dev.s3.amazonaws.com/models/musicgen_chord.th -O /musicgen_chord.th
 # predict.py defines how predictions are run on your model
 predict: "predict.py:Predictor"
 train: "train.py:train"

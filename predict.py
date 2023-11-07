@@ -75,7 +75,7 @@ class Predictor(BasePredictor):
         """Load the model into memory to make running multiple predictions efficient"""
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
-        self.model = load_ckpt('musicgen_chord.th', self.device)
+        self.model = load_ckpt('/musicgen_chord.th', self.device)
         self.model.lm.condition_provider.conditioners['self_wav'].match_len_on_eval = True
         self.mbd = MultiBandDiffusion.get_mbd_musicgen()
 
